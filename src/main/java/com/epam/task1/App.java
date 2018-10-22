@@ -13,21 +13,15 @@ public class App {
 
 		System.out.println(presentSweet.searchSweet(20, 22));
 		String paramSort = "Sugar";
-		// String paramSort = "Sugar";
+		// String paramSort = "Name";
 		// String paramSort = "Weight";
 
 		System.out.println(presentSweet.sortSweets(paramSort));
-		/*
-		 * for (Sweets sweet : presentSweet.getPresentSweet()) {
-		 * 
-		 * System.out.println(sweet.getName() + " - " + sweet.getWeight()); }
-		 * 
-		 */
-		/*
-		 * presentSweet.SummWeight();
-		 * 
-		 * System.out.print(presentSweet.getPresentWeight());
-		 */
+
+		presentSweet.summWeight();
+
+		System.out.print(presentSweet.getPresentWeight());
+
 	}
 
 }

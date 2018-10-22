@@ -163,4 +163,57 @@ public class Test1 {
 
 	}
 
+	@Test
+	public void testsortSweets2() {
+
+		// GIVEN
+		Present underTest = new Present();
+		List<Sweets> presentSweet = new ArrayList<Sweets>();
+
+		presentSweet.add(new Lollipop("LLLLL1", 52, 19, "Lemon1"));
+		presentSweet.add(new СandyСane("Buslyk3", 58, 31, (float) 45.5));
+		presentSweet.add(new LequeureCandy("Rum2", 22, 26, (float) 2.2));
+
+		// WHEN
+		underTest.setPresentSweet(presentSweet);
+
+		List<Sweets> result = underTest.sortSweets("Weight");
+
+		List<Sweets> expectedResult = new ArrayList<Sweets>();
+
+		expectedResult.add(new LequeureCandy("Rum2", 22, 26, (float) 2.2));
+		expectedResult.add(new Lollipop("LLLLL1", 52, 19, "Lemon1"));
+		expectedResult.add(new СandyСane("Buslyk3", 58, 31, (float) 45.5));
+		// THEN
+
+		Assert.assertEquals(expectedResult, result);
+
+	}
+
+	@Test
+	public void testsortSweets3() {
+
+		// GIVEN
+		Present underTest = new Present();
+		List<Sweets> presentSweet = new ArrayList<Sweets>();
+
+		presentSweet.add(new Lollipop("LLLLL1", 52, 19, "Lemon1"));
+		presentSweet.add(new СandyСane("Buslyk3", 58, 31, (float) 45.5));
+		presentSweet.add(new LequeureCandy("Rum2", 22, 26, (float) 2.2));
+
+		// WHEN
+		underTest.setPresentSweet(presentSweet);
+
+		List<Sweets> result = underTest.sortSweets("Sugar");
+
+		List<Sweets> expectedResult = new ArrayList<Sweets>();
+
+		expectedResult.add(new Lollipop("LLLLL1", 52, 19, "Lemon1"));
+		expectedResult.add(new LequeureCandy("Rum2", 22, 26, (float) 2.2));
+		expectedResult.add(new СandyСane("Buslyk3", 58, 31, (float) 45.5));
+		// THEN
+
+		Assert.assertEquals(expectedResult, result);
+
+	}
 }

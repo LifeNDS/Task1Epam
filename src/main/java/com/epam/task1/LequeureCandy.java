@@ -23,12 +23,7 @@ public class LequeureCandy extends Sweets {
 
 	@Override
 	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (!super.equals(obj))
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
+
 		LequeureCandy other = (LequeureCandy) obj;
 		if (alcoholPercentage != other.alcoholPercentage)
 			return false;
