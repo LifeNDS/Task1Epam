@@ -5,9 +5,12 @@ class СandyСane extends Sweets {
 
 	public СandyСane(String name, float weight, float sugar, float cocoaPercentage) {
 		super(name, weight, sugar);
+
+		if (cocoaPercentage < 0) {
+			throw new IllegalArgumentException("CocoaPercentage can not be less then zero.");
+		}
 		this.cocoaPercentage = cocoaPercentage;
 	}
-
 
 	public float getCocoaPercentage() {
 		return cocoaPercentage;
@@ -16,6 +19,20 @@ class СandyСane extends Sweets {
 	@Override
 	public String toString() {
 		return super.toString() + " /cocoa% " + cocoaPercentage;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		СandyСane other = (СandyСane) obj;
+		if (cocoaPercentage != other.cocoaPercentage)
+			return false;
+		return true;
 	}
 
 }
