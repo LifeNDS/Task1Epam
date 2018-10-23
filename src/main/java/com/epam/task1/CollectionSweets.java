@@ -18,7 +18,7 @@ public class CollectionSweets {
 		sw.add(new LequeureCandy("Rum3", 24, 27, (float) 6.2));
 		sw.add(new LequeureCandy("Rum4", 25, 28, (float) 8.2));
 
-		sw.add(new Lollipop("LLLLL1", 52, 19, "Lemon1"));
+		sw.add(new Lollipop("", 52, 19, "Lemon1"));
 		sw.add(new Lollipop("LLLLL2", 53, 20, "Lemon2"));
 		sw.add(new Lollipop("LLLLL3", 54, 21, "Lemon3"));
 		sw.add(new Lollipop("LLLLL4", 55, 22, "Lemon4"));

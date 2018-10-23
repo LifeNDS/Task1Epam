@@ -5,7 +5,11 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import org.apache.log4j.Logger;
+
 public class Present {
+	static final Logger LOG = Logger.getLogger(Present.class);
+
 	private List<Sweets> presentSweet = new ArrayList<Sweets>();
 
 	private float presentWeight;
@@ -29,7 +33,7 @@ public class Present {
 	public Sweets searchSweet(float min, float max) {
 		for (Sweets sw : presentSweet) {
 			if (sw.getSugar() > min && sw.getSugar() < max) {
-
+				LOG.info(sw);
 				return sw;
 
 			}
@@ -43,6 +47,7 @@ public class Present {
 			sumTemp += fff.getWeight();
 		}
 		setPresentWeight(sumTemp);
+		LOG.info(sumTemp);
 		return getPresentWeight();
 	}
 
@@ -51,7 +56,7 @@ public class Present {
 		switch (paramSort) {
 		case "Name":
 			presentSweet.sort((o1, o2) -> o1.getName().compareTo(o2.getName()));
-
+			LOG.info(presentSweet);
 			return presentSweet;
 
 		case "Sugar":
@@ -61,7 +66,7 @@ public class Present {
 					return (int) (o1.getSugar() - o2.getSugar());
 				}
 			});
-
+			LOG.info(presentSweet);
 			return presentSweet;
 		case "Weight":
 			Collections.sort(presentSweet, new Comparator<Sweets>() {
@@ -70,8 +75,10 @@ public class Present {
 					return (int) (o1.getWeight() - o2.getWeight());
 				}
 			});
+			LOG.info(presentSweet);
 			return presentSweet;
 		default:
+			LOG.info(presentSweet);
 			return presentSweet;
 
 		}
